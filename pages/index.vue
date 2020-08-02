@@ -1,18 +1,27 @@
 <template>
-	<table>
-		<tbody>
-			<tr
-				v-for="(icon, name) in icons"
-			>
-				<td>
-					{{ name }}
-				</td>
-				<td>
-					<component :is="icon" />
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<div>
+		<label>
+			<input
+				v-model="renderIcons"
+				type="checkbox"
+			/>
+			Render icons
+		</label>
+		<table v-if="renderIcons">
+			<tbody>
+				<tr
+					v-for="(icon, name) in icons"
+				>
+					<td>
+						{{ name }}
+					</td>
+					<td>
+						<component :is="icon" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </template>
 
 <script>
@@ -27,8 +36,9 @@ requireIcons.keys().forEach((iconPath) => {
 export default {
 	data() {
 		return {
-			icons
+			renderIcons: true,
+			icons,
 		};
-	}
-}
+	},
+};
 </script>

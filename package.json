@@ -10,6 +10,6 @@
   },
   "dependencies": {
     "nuxt": "^2.14.0",
-    "vue-feather-icon-set": "github:privatenumber/vue-feather-icon-set#built"
+    "vue-feather-icon-set": "0.0.1"
   }
 }
